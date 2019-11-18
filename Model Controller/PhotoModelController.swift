@@ -23,6 +23,7 @@ class PhotoController {
         let photo = Photo(imageData: data, title: title)
         
         photos.append(photo)
+        saveToPersistentStore()
     }
     
     func update(photo: Photo, named title: String, with data: Data) {
@@ -32,9 +33,10 @@ class PhotoController {
         saveToPersistentStore()
     }
     
-    func compare() {
-        
-        
+    func deletePhoto(photo: Photo, named title: String, with data: Data) {
+        guard let index = photos.firstIndex(of: photo) else { return }
+        let photo = Photo(imageData: data, title: title)
+        photos[index] = photo
     }
     
     // MARK: PERSISTENCE
@@ -53,7 +55,7 @@ class PhotoController {
                 let data = try encoder.encode(photos)
                 try data.write(to: url)
             } catch {
-                print("Error saving books data: \(error)")
+                print("Error saving photos data: \(error)")
             }
         }
 
@@ -62,12 +64,12 @@ class PhotoController {
             guard let url = persistentFileURL,
                 fm.fileExists(atPath: url.path) else { return }
 
-            do{
+            do {
                 let data = try Data(contentsOf: url)
                 let decoder = PropertyListDecoder()
-                photos = [try decoder.decode(Photo.self, from: data)]
+                photos = try decoder.decode([Photo].self, from: data)
             } catch {
-                print("Error loading books data: \(error)")
+                print("Error loading photos data: \(error)")
         }
     }
 }

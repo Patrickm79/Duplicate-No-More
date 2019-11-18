@@ -59,7 +59,6 @@ class AddPhotosViewController: UIViewController {
             photoController?.createPhoto(named: name, with: data)
         }
         navigationController?.popViewController(animated: true)
-        
     }
     
 
