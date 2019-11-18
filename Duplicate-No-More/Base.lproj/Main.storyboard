@@ -61,24 +61,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="201" id="yEt-87-3nS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoTableViewCell" rowHeight="201" id="yEt-87-3nS" customClass="PhotosTableViewCell" customModule="Duplicate_No_More" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="201"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yEt-87-3nS" id="drp-S0-RSM">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="17U-Gf-Z62" customClass="PhotosCollectionView" customModule="Duplicate_No_More" customModuleProvider="target">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="17U-Gf-Z62">
                                             <rect key="frame" x="8" y="0.0" width="398" height="201"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2bV-Wi-XIC">
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2bV-Wi-XIC">
                                                 <size key="itemSize" width="182" height="190"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="0gu-La-l6F" customClass="PhotosCollectionViewCell" customModule="Duplicate_No_More" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="0gu-La-l6F" customClass="PhotosCollectionViewCell" customModule="Duplicate_No_More" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="182" height="190"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9rM-pe-Zj1">
@@ -114,24 +115,25 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="XTf-Ar-oMl" firstAttribute="leading" secondItem="9rM-pe-Zj1" secondAttribute="leading" id="AwG-X8-bIM"/>
-                                                            <constraint firstAttribute="bottom" secondItem="XTf-Ar-oMl" secondAttribute="bottom" id="Fx1-kd-q1v"/>
-                                                            <constraint firstItem="XTf-Ar-oMl" firstAttribute="top" secondItem="9rM-pe-Zj1" secondAttribute="top" id="JYO-RX-sL8"/>
+                                                            <constraint firstAttribute="bottom" secondItem="XTf-Ar-oMl" secondAttribute="bottom" id="Gsc-4R-zJ1"/>
+                                                            <constraint firstItem="XTf-Ar-oMl" firstAttribute="leading" secondItem="9rM-pe-Zj1" secondAttribute="leading" id="SiI-Tu-paD"/>
                                                             <constraint firstAttribute="trailing" secondItem="XTf-Ar-oMl" secondAttribute="trailing" id="fxE-xc-zwO"/>
+                                                            <constraint firstItem="XTf-Ar-oMl" firstAttribute="top" secondItem="9rM-pe-Zj1" secondAttribute="top" id="wYQ-IB-5p5"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <size key="customSize" width="182" height="190"/>
+                                                    <connections>
+                                                        <outlet property="imageOutlet" destination="NZv-Wx-PFC" id="fim-sf-uxJ"/>
+                                                        <outlet property="labelOutlet" destination="LvD-mc-MxV" id="AaM-kD-uVE"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="17U-Gf-Z62" firstAttribute="top" secondItem="drp-S0-RSM" secondAttribute="top" id="6SS-Pg-vyh"/>
-                                        <constraint firstItem="17U-Gf-Z62" firstAttribute="leading" secondItem="drp-S0-RSM" secondAttribute="leading" constant="8" id="AZK-vz-STN"/>
-                                        <constraint firstAttribute="trailing" secondItem="17U-Gf-Z62" secondAttribute="trailing" constant="8" id="O23-D6-iJr"/>
-                                        <constraint firstAttribute="bottom" secondItem="17U-Gf-Z62" secondAttribute="bottom" id="gfA-3Z-kd3"/>
-                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView" destination="drp-S0-RSM" id="3BQ-ex-GmG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -166,7 +168,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="sLT-hu-uRV">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="sLT-hu-uRV">
                                 <rect key="frame" x="8" y="168" width="398" height="434"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xD6-nF-F5e">

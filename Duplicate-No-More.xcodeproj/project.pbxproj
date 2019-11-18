@@ -16,9 +16,9 @@
 		DB1E693323830CCF00AFA45B /* PhotoModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693223830CCF00AFA45B /* PhotoModelController.swift */; };
 		DB1E69372383196200AFA45B /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E69362383196200AFA45B /* PhotosCollectionViewCell.swift */; };
 		DB1E69392383196D00AFA45B /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E69382383196D00AFA45B /* PhotosTableViewController.swift */; };
-		DB1E693B238319F300AFA45B /* PhotosCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693A238319F300AFA45B /* PhotosCollectionView.swift */; };
 		DB1E693D23831A4F00AFA45B /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693C23831A4F00AFA45B /* AddPhotosViewController.swift */; };
 		DB1E693F23831B9200AFA45B /* DupeDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693E23831B9200AFA45B /* DupeDetectorViewController.swift */; };
+		DB1E69412383270800AFA45B /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E69402383270800AFA45B /* PhotosTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,9 @@
 		DB1E693223830CCF00AFA45B /* PhotoModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModelController.swift; sourceTree = "<group>"; };
 		DB1E69362383196200AFA45B /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB1E69382383196D00AFA45B /* PhotosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
-		DB1E693A238319F300AFA45B /* PhotosCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionView.swift; sourceTree = "<group>"; };
 		DB1E693C23831A4F00AFA45B /* AddPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
 		DB1E693E23831B9200AFA45B /* DupeDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupeDetectorViewController.swift; sourceTree = "<group>"; };
+		DB1E69402383270800AFA45B /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +108,37 @@
 		DB1E692F23830A0100AFA45B /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DB1E69362383196200AFA45B /* PhotosCollectionViewCell.swift */,
+				DB1E6943238327B000AFA45B /* Collection View Controllers */,
+				DB1E69422383279400AFA45B /* Table View Controllers */,
+				DB1E694423832A3E00AFA45B /* Segue View Controllers */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		DB1E69422383279400AFA45B /* Table View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				DB1E69382383196D00AFA45B /* PhotosTableViewController.swift */,
-				DB1E693A238319F300AFA45B /* PhotosCollectionView.swift */,
+				DB1E69402383270800AFA45B /* PhotosTableViewCell.swift */,
+			);
+			path = "Table View Controllers";
+			sourceTree = "<group>";
+		};
+		DB1E6943238327B000AFA45B /* Collection View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB1E69362383196200AFA45B /* PhotosCollectionViewCell.swift */,
+			);
+			path = "Collection View Controllers";
+			sourceTree = "<group>";
+		};
+		DB1E694423832A3E00AFA45B /* Segue View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				DB1E693C23831A4F00AFA45B /* AddPhotosViewController.swift */,
 				DB1E693E23831B9200AFA45B /* DupeDetectorViewController.swift */,
 			);
-			path = "View Controller";
+			path = "Segue View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1E69412383270800AFA45B /* PhotosTableViewCell.swift in Sources */,
 				DB1E693323830CCF00AFA45B /* PhotoModelController.swift in Sources */,
-				DB1E693B238319F300AFA45B /* PhotosCollectionView.swift in Sources */,
 				DB1E693123830A0D00AFA45B /* PhotoModel.swift in Sources */,
 				DB1E69192383098F00AFA45B /* AppDelegate.swift in Sources */,
 				DB1E693F23831B9200AFA45B /* DupeDetectorViewController.swift in Sources */,

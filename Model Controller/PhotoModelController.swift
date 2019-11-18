@@ -13,7 +13,11 @@ class PhotoController {
     init() {
         loadFromPersistentStore()
     }
+    
+    
     var photos: [Photo] = []
+    
+
     
     func createPhoto(named title: String, with data: Data) {
         let photo = Photo(imageData: data, title: title)
@@ -28,7 +32,10 @@ class PhotoController {
         saveToPersistentStore()
     }
     
-    
+    func compare() {
+        
+        
+    }
     
     // MARK: PERSISTENCE
     
@@ -58,12 +65,9 @@ class PhotoController {
             do{
                 let data = try Data(contentsOf: url)
                 let decoder = PropertyListDecoder()
-                photos = try decoder.decode([Photo].self, from: data)
+                photos = [try decoder.decode(Photo.self, from: data)]
             } catch {
                 print("Error loading books data: \(error)")
         }
     }
-    
-    
-    
 }

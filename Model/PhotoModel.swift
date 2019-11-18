@@ -15,6 +15,6 @@ struct Photo: Equatable, Codable {
 
         var photo: UIImage{
             return UIImage(named: title)!
-        }
     }
+}
 

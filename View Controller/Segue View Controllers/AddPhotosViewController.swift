@@ -24,7 +24,7 @@ class AddPhotosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
@@ -34,7 +34,7 @@ class AddPhotosViewController: UIViewController {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
 
-        let alertcontroller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alertcontroller = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertcontroller.addAction(cancelAction)
@@ -65,6 +65,7 @@ class AddPhotosViewController: UIViewController {
 
     
     //MARK: METHODS
+    
     private func updateViews() {
         guard let imageData = photo?.imageData else { return }
         
@@ -73,6 +74,7 @@ class AddPhotosViewController: UIViewController {
     }
     
 }
+
 
 extension AddPhotosViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
