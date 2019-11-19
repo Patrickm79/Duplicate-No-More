@@ -30,11 +30,6 @@ class PhotoController {
         saveToPersistentStore()
     }
     
-    func deletePhoto(photo: Photo, named title: String, with data: Data) {
-        guard let index = photos.firstIndex(of: photo) else { return }
-        let photo = Photo(imageData: data, title: title)
-        photos[index] = photo
-    }
     
     // MARK: PERSISTENCE
     
@@ -44,7 +39,7 @@ class PhotoController {
             return dir.appendingPathComponent("photos.plist")
         }
 
-        private func saveToPersistentStore() {
+         func saveToPersistentStore() {
             guard let url = persistentFileURL else { return }
 
             do {
