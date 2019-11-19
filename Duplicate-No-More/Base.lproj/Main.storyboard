@@ -84,33 +84,44 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-Na-o6G">
-                                                    <rect key="frame" x="0.0" y="3" width="196" height="154"/>
+                                                    <rect key="frame" x="21" y="0.0" width="154" height="154"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Lba-Na-o6G" secondAttribute="height" multiplier="1:1" id="tWU-xE-Wdr"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdc-lf-R3q">
+                                                    <rect key="frame" x="133" y="133" width="42" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Lba-Na-o6G" secondAttribute="trailing" id="9PL-AE-gZX"/>
-                                                <constraint firstItem="Hs0-fV-hqQ" firstAttribute="leading" secondItem="fBF-nC-AXB" secondAttribute="leading" constant="8" id="GBl-8k-9CF"/>
-                                                <constraint firstAttribute="bottom" secondItem="Lba-Na-o6G" secondAttribute="bottom" constant="30" id="Z5m-tC-Fsl"/>
-                                                <constraint firstItem="Lba-Na-o6G" firstAttribute="top" secondItem="fBF-nC-AXB" secondAttribute="top" constant="3" id="Z8K-Ap-OIz"/>
-                                                <constraint firstItem="Lba-Na-o6G" firstAttribute="leading" secondItem="fBF-nC-AXB" secondAttribute="leading" id="m7T-GH-9uX"/>
-                                                <constraint firstAttribute="bottom" secondItem="Hs0-fV-hqQ" secondAttribute="bottom" constant="4" id="qZd-cD-byk"/>
-                                                <constraint firstAttribute="trailing" secondItem="Hs0-fV-hqQ" secondAttribute="trailing" constant="8" id="wO7-hS-qoB"/>
+                                                <constraint firstItem="Rdc-lf-R3q" firstAttribute="top" secondItem="fBF-nC-AXB" secondAttribute="top" constant="133" id="1aR-Mo-JBg"/>
+                                                <constraint firstItem="Rdc-lf-R3q" firstAttribute="leading" secondItem="fBF-nC-AXB" secondAttribute="leading" constant="133" id="5aa-90-Jiy"/>
+                                                <constraint firstItem="Hs0-fV-hqQ" firstAttribute="leading" secondItem="fBF-nC-AXB" secondAttribute="leading" constant="8" id="O0h-Ps-Ncx"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hs0-fV-hqQ" secondAttribute="trailing" constant="8" id="XZJ-LG-kgm"/>
+                                                <constraint firstItem="Lba-Na-o6G" firstAttribute="leading" secondItem="fBF-nC-AXB" secondAttribute="leading" constant="21" id="Z3i-pA-1Zo"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rdc-lf-R3q" secondAttribute="trailing" constant="21" id="aSp-nD-9Mh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hs0-fV-hqQ" secondAttribute="bottom" constant="4" id="jIE-cv-fMs"/>
+                                                <constraint firstItem="Lba-Na-o6G" firstAttribute="top" secondItem="fBF-nC-AXB" secondAttribute="top" id="ooK-Ge-nOG"/>
+                                                <constraint firstAttribute="trailing" secondItem="Lba-Na-o6G" secondAttribute="trailing" constant="21" id="vS6-cE-zwv"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="fBF-nC-AXB" firstAttribute="top" secondItem="q9l-7i-UQo" secondAttribute="top" id="FDF-Xj-KaP"/>
-                                        <constraint firstItem="fBF-nC-AXB" firstAttribute="leading" secondItem="q9l-7i-UQo" secondAttribute="leading" id="LKf-i2-OpU"/>
-                                        <constraint firstAttribute="bottom" secondItem="fBF-nC-AXB" secondAttribute="bottom" id="vGR-0l-D49"/>
-                                        <constraint firstAttribute="trailing" secondItem="fBF-nC-AXB" secondAttribute="trailing" id="xLo-3K-1vz"/>
+                                        <constraint firstItem="fBF-nC-AXB" firstAttribute="leading" secondItem="q9l-7i-UQo" secondAttribute="leading" id="7iM-R4-TzY"/>
+                                        <constraint firstAttribute="bottom" secondItem="fBF-nC-AXB" secondAttribute="bottom" id="YkV-mX-vqq"/>
+                                        <constraint firstItem="fBF-nC-AXB" firstAttribute="top" secondItem="q9l-7i-UQo" secondAttribute="top" id="jeW-Ke-gzM"/>
+                                        <constraint firstAttribute="trailing" secondItem="fBF-nC-AXB" secondAttribute="trailing" id="v3t-Cj-fm0"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="196" height="187"/>
                                 <connections>
+                                    <outlet property="checkmarkLabel" destination="Rdc-lf-R3q" id="lDf-3Q-Xb3"/>
                                     <outlet property="imageOutlet" destination="Lba-Na-o6G" id="ZAF-BR-4fr"/>
                                     <outlet property="labelOutlet" destination="Hs0-fV-hqQ" id="NRi-e2-tvb"/>
-                                    <segue destination="lwA-4A-afW" kind="show" identifier="EditPhotoShowSegue" id="aUZ-gU-24l"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -119,18 +130,34 @@
                             <outlet property="delegate" destination="ZPp-HY-Kti" id="6ZM-Wv-eCG"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="k7f-Hx-Onf">
-                        <barButtonItem key="leftBarButtonItem" title="DupeDetector" id="jjb-wd-7uj">
-                            <connections>
-                                <segue destination="bzd-Xo-3dW" kind="show" identifier="DupeDetectorShowSegue" id="JhB-NW-hhC"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="wAC-hd-vjQ">
-                            <connections>
-                                <segue destination="lwA-4A-afW" kind="show" identifier="AddPhotoShowSegue" id="1rQ-ej-3oX"/>
-                            </connections>
-                        </barButtonItem>
+                        <nil key="title"/>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Delete" id="dzO-NK-7BQ"/>
+                            <barButtonItem title="DupeDetector" id="jjb-wd-7uj">
+                                <connections>
+                                    <segue destination="bzd-Xo-3dW" kind="show" identifier="DupeDetectorShowSegue" id="JhB-NW-hhC"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="trash" catalog="system" id="lYx-q5-MKu">
+                                <connections>
+                                    <action selector="deleteItem:" destination="ZPp-HY-Kti" id="l3Y-IV-iLy"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="wAC-hd-vjQ">
+                                <connections>
+                                    <segue destination="lwA-4A-afW" kind="show" identifier="AddPhotoShowSegue" id="1rQ-ej-3oX"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="deleteButton" destination="lYx-q5-MKu" id="YXG-EY-f7O"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iyn-kI-ixa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,8 +240,6 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="1rQ-ej-3oX"/>
-    </inferredMetricsTieBreakers>
 </document>

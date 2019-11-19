@@ -12,9 +12,12 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     let photoController = PhotoController()
     
+    
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,6 +25,16 @@ class PhotosCollectionViewController: UICollectionViewController {
         collectionView.reloadData()
     }
     
+    @IBAction func deleteItem(_ sender: Any) {
+        if let selectedCells = collectionView.indexPathsForSelectedItems {
+          let items = selectedCells.map { $0.item }.sorted().reversed()
+          for item in items {
+            photoController.photos.remove(at: item)
+          }
+          collectionView.deleteItems(at: selectedCells)
+          deleteButton.isEnabled = false
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -57,6 +70,32 @@ class PhotosCollectionViewController: UICollectionViewController {
         return cell
     }
 
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+
+        collectionView.allowsMultipleSelection = editing
+        let indexPaths = collectionView.indexPathsForVisibleItems
+        for indexPath in indexPaths {
+            guard let cell = collectionView.cellForItem(at: indexPath) as? PhotosCollectionViewCell else { return }
+            cell.isInEditingMode = editing
+        }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if !isEditing{
+            deleteButton.isEnabled = false
+        } else {
+            deleteButton.isEnabled = true
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let selectedItems = collectionView.indexPathsForSelectedItems, selectedItems.count == 0 {
+            deleteButton.isEnabled = false
+        }
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*

@@ -14,10 +14,7 @@ class PhotoController {
         loadFromPersistentStore()
     }
     
-    
     var photos: [Photo] = []
-    
-
     
     func createPhoto(named title: String, with data: Data) {
         let photo = Photo(imageData: data, title: title)
