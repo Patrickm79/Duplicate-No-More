@@ -12,7 +12,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     //MARK: PROPERTIES
     
-    let photoController = PhotoController()
+    var photoController = PhotoController()
     
     //MARK: OUTLETS
     

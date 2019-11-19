@@ -13,51 +13,89 @@
             <objects>
                 <viewController id="bzd-Xo-3dW" customClass="DupeDetectorViewController" customModule="Duplicate_No_More" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ip-fA-tpL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="0o5-od-sQi">
-                                <rect key="frame" x="8" y="94" width="584" height="574"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0o5-od-sQi">
+                                <rect key="frame" x="8" y="50" width="398" height="659"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLh-wV-wOV">
-                                        <rect key="frame" x="200" y="0.0" width="184" height="184"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLh-wV-wOV">
+                                        <rect key="frame" x="74" y="0.0" width="250" height="250"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="yLh-wV-wOV" secondAttribute="height" multiplier="1:1" id="AtC-2s-G16"/>
+                                            <constraint firstAttribute="width" secondItem="yLh-wV-wOV" secondAttribute="height" multiplier="1:1" id="FoJ-Ak-xPH"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="xUX-tu-0gX" appends="YES" id="PDD-6I-nZK"/>
+                                        </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejb-T0-mNZ">
-                                        <rect key="frame" x="260.5" y="272" width="63" height="30"/>
+                                        <rect key="frame" x="167.5" y="258" width="63" height="143"/>
                                         <state key="normal" title="Compare"/>
+                                        <connections>
+                                            <action selector="compareTapped:" destination="bzd-Xo-3dW" eventType="touchUpInside" id="QIc-Cv-mcw"/>
+                                        </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uqo-1g-BlG">
-                                        <rect key="frame" x="200" y="390" width="184" height="184"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uqo-1g-BlG">
+                                        <rect key="frame" x="74" y="409" width="250" height="250"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Uqo-1g-BlG" secondAttribute="height" multiplier="1:1" id="apa-C6-jiO"/>
+                                            <constraint firstAttribute="width" secondItem="Uqo-1g-BlG" secondAttribute="height" multiplier="1:1" id="eCx-R9-gHT"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="rnu-Q8-DMH" appends="YES" id="G73-c4-zrt"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Uqo-1g-BlG" secondAttribute="trailing" constant="74" id="Evj-gJ-jPB"/>
+                                    <constraint firstItem="Uqo-1g-BlG" firstAttribute="leading" secondItem="0o5-od-sQi" secondAttribute="leading" constant="74" id="JVl-y7-GOt"/>
+                                    <constraint firstItem="yLh-wV-wOV" firstAttribute="top" secondItem="0o5-od-sQi" secondAttribute="top" id="Mjr-Ij-Ds2"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uqo-1g-BlG" secondAttribute="bottom" id="e5i-rk-hhj"/>
+                                    <constraint firstAttribute="trailing" secondItem="yLh-wV-wOV" secondAttribute="trailing" constant="74" id="mvG-Gh-aH7"/>
+                                    <constraint firstItem="yLh-wV-wOV" firstAttribute="leading" secondItem="0o5-od-sQi" secondAttribute="leading" constant="74" id="nAN-fV-cnX"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0o5-od-sQi" firstAttribute="leading" secondItem="Nlq-Bh-MfI" secondAttribute="leading" constant="8" id="OM1-fA-KbQ"/>
                             <constraint firstItem="Nlq-Bh-MfI" firstAttribute="trailing" secondItem="0o5-od-sQi" secondAttribute="trailing" constant="8" id="XKu-s7-TLH"/>
+                            <constraint firstItem="Nlq-Bh-MfI" firstAttribute="bottom" secondItem="0o5-od-sQi" secondAttribute="bottom" constant="50" id="hhD-Vw-58n"/>
                             <constraint firstItem="0o5-od-sQi" firstAttribute="top" secondItem="Nlq-Bh-MfI" secondAttribute="top" constant="50" id="qje-ak-FqJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nlq-Bh-MfI"/>
                     </view>
                     <navigationItem key="navigationItem" id="32u-na-Rmn"/>
+                    <connections>
+                        <outlet property="imageOneOutlet" destination="yLh-wV-wOV" id="c4p-Ux-RY1"/>
+                        <outlet property="imageTwoOutlet" destination="Uqo-1g-BlG" id="XFt-pL-JTI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFr-4p-ssO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rnu-Q8-DMH" userLabel="ImageTwoTapGesture">
+                    <connections>
+                        <action selector="imageTwoTapped:" destination="bzd-Xo-3dW" id="VOg-9t-yUH"/>
+                        <segue destination="ZPp-HY-Kti" kind="presentation" identifier="ImageTwoTapSegue" id="un8-GI-64h"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="xUX-tu-0gX" userLabel="ImageOneTapGesture">
+                    <connections>
+                        <action selector="imageOneTapped:" destination="bzd-Xo-3dW" id="BKu-3z-IkU"/>
+                        <segue destination="ZPp-HY-Kti" kind="presentation" identifier="ImageOneTapSegue" id="W23-vl-K6j"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2868" y="-729"/>
+            <point key="canvasLocation" x="2866.666666666667" y="-729.24107142857144"/>
         </scene>
         <!--Photos Collection View Controller-->
         <scene sceneID="IzP-LH-fGl">
             <objects>
                 <collectionViewController id="ZPp-HY-Kti" customClass="PhotosCollectionViewController" customModule="Duplicate_No_More" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dPm-fn-d2o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bw7-gK-YOT">
@@ -90,7 +128,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdc-lf-R3q">
-                                                    <rect key="frame" x="133" y="133" width="42" height="0.0"/>
+                                                    <rect key="frame" x="133" y="133" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -103,7 +141,7 @@
                                                 <constraint firstItem="Hs0-fV-hqQ" firstAttribute="leading" secondItem="fBF-nC-AXB" secondAttribute="leading" constant="8" id="O0h-Ps-Ncx"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hs0-fV-hqQ" secondAttribute="trailing" constant="8" id="XZJ-LG-kgm"/>
                                                 <constraint firstItem="Lba-Na-o6G" firstAttribute="leading" secondItem="fBF-nC-AXB" secondAttribute="leading" constant="21" id="Z3i-pA-1Zo"/>
-                                                <constraint firstAttribute="trailing" secondItem="Rdc-lf-R3q" secondAttribute="trailing" constant="21" id="aSp-nD-9Mh"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rdc-lf-R3q" secondAttribute="trailing" symbolic="YES" id="aSp-nD-9Mh"/>
                                                 <constraint firstAttribute="bottom" secondItem="Hs0-fV-hqQ" secondAttribute="bottom" constant="4" id="jIE-cv-fMs"/>
                                                 <constraint firstItem="Lba-Na-o6G" firstAttribute="top" secondItem="fBF-nC-AXB" secondAttribute="top" id="ooK-Ge-nOG"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lba-Na-o6G" secondAttribute="trailing" constant="21" id="vS6-cE-zwv"/>
@@ -165,27 +203,27 @@
             <objects>
                 <viewController id="lwA-4A-afW" customClass="AddPhotosViewController" customModule="Duplicate_No_More" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EqM-nX-2iG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="sLT-hu-uRV">
-                                <rect key="frame" x="8" y="124" width="584" height="434"/>
+                                <rect key="frame" x="8" y="80" width="398" height="434"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xD6-nF-F5e">
-                                        <rect key="frame" x="171" y="0.0" width="242" height="242"/>
+                                        <rect key="frame" x="78" y="0.0" width="242" height="242"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xD6-nF-F5e" secondAttribute="height" multiplier="1:1" id="gjG-A1-EMd"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGj-My-R0C">
-                                        <rect key="frame" x="256" y="306" width="72" height="30"/>
+                                        <rect key="frame" x="163" y="306" width="72" height="30"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhotoTapped:" destination="lwA-4A-afW" eventType="touchUpInside" id="TMf-IS-STD"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name your Photo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJO-d1-2l6">
-                                        <rect key="frame" x="222" y="400" width="140" height="34"/>
+                                        <rect key="frame" x="129" y="400" width="140" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -243,4 +281,7 @@
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="trash" catalog="system" width="60" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="W23-vl-K6j"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -18,6 +18,7 @@
 		DB1E693D23831A4F00AFA45B /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693C23831A4F00AFA45B /* AddPhotosViewController.swift */; };
 		DB1E693F23831B9200AFA45B /* DupeDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693E23831B9200AFA45B /* DupeDetectorViewController.swift */; };
 		DB1E694B238353FA00AFA45B /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E694A238353FA00AFA45B /* PhotosCollectionViewController.swift */; };
+		DBF7B7EB23845750005AD0CC /* PhotoComparisonModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF7B7EA23845750005AD0CC /* PhotoComparisonModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DB1E693C23831A4F00AFA45B /* AddPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
 		DB1E693E23831B9200AFA45B /* DupeDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupeDetectorViewController.swift; sourceTree = "<group>"; };
 		DB1E694A238353FA00AFA45B /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		DBF7B7EA23845750005AD0CC /* PhotoComparisonModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoComparisonModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1E693223830CCF00AFA45B /* PhotoModelController.swift */,
+				DBF7B7EA23845750005AD0CC /* PhotoComparisonModelController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				DB1E691B2383098F00AFA45B /* SceneDelegate.swift in Sources */,
 				DB1E693D23831A4F00AFA45B /* AddPhotosViewController.swift in Sources */,
 				DB1E69372383196200AFA45B /* PhotosCollectionViewCell.swift in Sources */,
+				DBF7B7EB23845750005AD0CC /* PhotoComparisonModelController.swift in Sources */,
 				DB1E694B238353FA00AFA45B /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
