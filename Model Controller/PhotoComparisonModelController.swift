@@ -14,6 +14,20 @@ class PhotoComparisonController {
     var photos: Photo?
     var convertedArray: [Int] = []
     
+    func hammingDistance(photoOne: String, photoTwo: String) -> Int? {
+        guard !photoOne.isEmpty, !photoTwo.isEmpty, photoOne.count == photoTwo.count else {
+            return nil
+        }
+
+        var w1Iterator = photoOne.makeIterator()
+        var w2Iterator = photoTwo.makeIterator()
+
+        var distance = 0;
+        while let w1Char = w1Iterator.next(), let w2Char = w2Iterator.next()  {
+            distance += (w1Char != w2Char) ? 1 : 0
+        }
+        return distance
+    }
     
     func createBitcast(photoOne: Int, photoTwo: Int) -> Int {
         let signedDifferentBits = photoOne ^ photoTwo
@@ -31,11 +45,11 @@ class PhotoComparisonController {
         return counter
     }
     
-    func convertPhoto(_ photo: Photo) -> Int{
+    func convertPhoto(_ photo: Photo) -> String{
         let photoData = photo.imageData
-        let photoString = String(data: photoData, encoding: String.Encoding.utf8)
-        let photoInt = Int(photoString ?? "")
         
-        return photoInt!
+        let photoString = photoData.base64EncodedString()
+
+        return photoString
     }
 }

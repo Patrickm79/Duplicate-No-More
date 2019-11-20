@@ -9,7 +9,7 @@
 import UIKit
 
 class AddPhotosViewController: UIViewController {
-
+    
     
     //MARK: PROPERTIES
     var photoController: PhotoController?
@@ -33,12 +33,12 @@ class AddPhotosViewController: UIViewController {
     @IBAction func addPhotoTapped(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-
+        
         let alertcontroller = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertcontroller.addAction(cancelAction)
-
+        
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: {
                 (_) in imagePicker.sourceType = .photoLibrary
@@ -46,9 +46,9 @@ class AddPhotosViewController: UIViewController {
             })
             alertcontroller.addAction(photoLibraryAction)
         }
-
+        
         present(alertcontroller, animated: true, completion: nil)
-
+        
     }
     
     @IBAction func savePhotoTapped(_ sender: Any) {
@@ -61,7 +61,7 @@ class AddPhotosViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-
+    
     
     //MARK: METHODS
     
@@ -76,16 +76,16 @@ class AddPhotosViewController: UIViewController {
 
 
 extension AddPhotosViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage, let data = image.pngData() else { return }
-
+        
         photo?.imageData = data
         imageViewOutlet.image = image
-
+        
         dismiss(animated: true, completion: self.updateViews)
     }
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }

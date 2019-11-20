@@ -33,7 +33,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
             checkmarkLabel.isHidden = !isInEditingMode
         }
     }
-
+    
     
     override var isSelected: Bool {
         didSet {

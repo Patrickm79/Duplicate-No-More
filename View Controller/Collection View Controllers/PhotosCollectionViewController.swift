@@ -9,15 +9,31 @@
 import UIKit
 
 protocol PhotoSelectionDelegate: class {
-    func selectCell(_ cell: PhotosCollectionViewController)
+    func selectCell(_ cell: PhotosCollectionViewCell, selectedImage: ImageSelected, indexPath: IndexPath)
 }
 
-class PhotosCollectionViewController: UICollectionViewController {
+enum ImageSelected {
+    case ImageOne
+    case ImageTwo
+}
+
+
+class PhotosCollectionViewController: UICollectionViewController, ModalTransitionListener {
+    
+    func popoverDismissed() {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        collectionView.reloadData()
+    }
+    
     
     //MARK: PROPERTIES
+    
     weak var delegate: PhotoSelectionDelegate?
     
     var photoController = PhotoController()
+    
+    
+    var imageSelected: ImageSelected?
     
     //MARK: OUTLETS
     
@@ -31,7 +47,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        collectionView.reloadData()
+        ModalTransitionMediator.instance.setListener(listener: self)
     }
     
     //MARK: ACTIONS
@@ -47,14 +63,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         }
     }
     
-    //MARK: METHODS
-    
-    func selectCell(_ cell: PhotosCollectionViewController) {
-        guard let cellData = cell.collectionView.indexPathsForSelectedItems else { return }
-        for indexPath in cellData {
-            guard (cell.collectionView.cellForItem(at: indexPath) as? PhotosCollectionViewCell) != nil else { return }
-        }
-    }
     
     // MARK: - Navigation
     
@@ -73,6 +81,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         default: return
         }
     }
+    
     
     // MARK: UICollectionViewDataSource
     
@@ -103,12 +112,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Cell Selected")
         if !isEditing {
             deleteButton.isEnabled = false
         } else {
             deleteButton.isEnabled = true
         }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PhotosCollectionViewCell else { return }
+        guard let image = imageSelected else { return }
+        delegate?.selectCell(cell, selectedImage: image, indexPath: indexPath)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
