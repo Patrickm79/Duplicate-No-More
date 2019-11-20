@@ -8,10 +8,14 @@
 
 import UIKit
 
-class PhotosCollectionViewController: UICollectionViewController {
+protocol PhotoSelectionDelegate: class {
+    func selectCell()
+}
+
+class PhotosCollectionViewController: UICollectionViewController, PhotoSelectionDelegate {
     
     //MARK: PROPERTIES
-    
+    weak var delegate: PhotoSelectionDelegate?
     var photoController = PhotoController()
     
     //MARK: OUTLETS
@@ -88,7 +92,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        print("Cell Selected")
         if !isEditing {
             deleteButton.isEnabled = false
         } else {
@@ -101,6 +105,18 @@ class PhotosCollectionViewController: UICollectionViewController {
             deleteButton.isEnabled = false
         }
     }
+    
+    func selectCell() -> Photo {
+        guard let selectedCell = collectionView.indexPathsForSelectedItems else { return }
+            for indexPath in selectedCell {
+                guard let cell = collectionView.cellForItem(at: indexPath) as? PhotosCollectionViewCell else { return }
+            guard let imageData = cell.photo?.imageData else { return }
+            guard let photoText = cell.photo?.title else { return }
+                let photo: Photo = Photo(imageData: imageData, title: photoText)
+                return photo
+        }
+    }
+    
     
     // MARK: UICollectionViewDelegate
     
@@ -134,3 +150,4 @@ class PhotosCollectionViewController: UICollectionViewController {
      */
     
 }
+

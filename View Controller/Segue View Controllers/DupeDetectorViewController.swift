@@ -9,11 +9,13 @@
 import UIKit
 
 class DupeDetectorViewController: UIViewController {
+    
+    
     //MARK: PROPERTIES
     
     let photoController = PhotoController()
     let photoComparisonController = PhotoComparisonController()
-    let collectionViewController = PhotosCollectionViewController()
+    let delegate = PhotoSelectionDelegate?.self
     
     var photo: Photo?
     
@@ -44,12 +46,20 @@ class DupeDetectorViewController: UIViewController {
     
     
     @IBAction func imageOneTapped(_ sender: Any) {
-        guard let selectedCell = collectionViewController.collectionView.indexPathsForSelectedItems else { return }
-        
-        let singleCell = collectionViewController.collectionView.cellForItem(at: <#T##IndexPath#>)
-        
-    }
-    
+            
+            guard let imageData = cell.photo?.imageData else { return }
+            guard let photoText = cell.photo?.title else { return }
+            
+            imageOneOutlet.image = UIImage(data: imageData)
+            
+            let photo: Photo = Photo(imageData: imageData, title: photoText)
+           let result = photoComparisonController.convertPhoto(photo)
+            check1 += result
+
+        // The equivalent of you tapping a button or some UI element to trigger a segue
+        performSegue(withIdentifier: "ImageOneTapSegue", sender: nil)
+
+}
     
     
     @IBAction func imageTwoTapped(_ sender: Any) {
@@ -72,9 +82,8 @@ class DupeDetectorViewController: UIViewController {
     //MARK: - METHODS
     
     private func updateViews() {
-        guard let imageData = photo?.imageData else { return }
-        imageOneOutlet.image = UIImage(data: imageData)
-}
+        
+    }
     
     
     
