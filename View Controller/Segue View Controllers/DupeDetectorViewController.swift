@@ -8,14 +8,16 @@
 
 import UIKit
 
-class DupeDetectorViewController: UIViewController {
+class DupeDetectorViewController: UIViewController, PhotoSelectionDelegate {
+    
+    
+    
     
     
     //MARK: PROPERTIES
     
     let photoController = PhotoController()
     let photoComparisonController = PhotoComparisonController()
-    let delegate = PhotoSelectionDelegate?.self
     
     var photo: Photo?
     
@@ -34,6 +36,7 @@ class DupeDetectorViewController: UIViewController {
     //MARK: LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,16 +50,17 @@ class DupeDetectorViewController: UIViewController {
     
     @IBAction func imageOneTapped(_ sender: Any) {
             
-            guard let imageData = cell.photo?.imageData else { return }
-            guard let photoText = cell.photo?.title else { return }
-            
-            imageOneOutlet.image = UIImage(data: imageData)
-            
-            let photo: Photo = Photo(imageData: imageData, title: photoText)
-           let result = photoComparisonController.convertPhoto(photo)
-            check1 += result
+        
+        
+//            guard let imageData = cell.photo?.imageData else { return }
+//            guard let photoText = cell.photo?.title else { return }
+//
+//            imageOneOutlet.image = UIImage(data: imageData)
+//
+//            let photo: Photo = Photo(imageData: imageData, title: photoText)
+//           let result = photoComparisonController.convertPhoto(photo)
+//            check1 += result
 
-        // The equivalent of you tapping a button or some UI element to trigger a segue
         performSegue(withIdentifier: "ImageOneTapSegue", sender: nil)
 
 }
@@ -81,12 +85,13 @@ class DupeDetectorViewController: UIViewController {
     
     //MARK: - METHODS
     
-    private func updateViews() {
-        
-    }
     
-    
-    
+    func selectCell(_ cell: PhotosCollectionViewController) {
+        guard let selectedCell = cell.collectionView.indexPathsForSelectedItems else { return }
+        for indexPath in selectedCell {
+            guard let cell =
+        }
+      }
     
     
     // MARK: - Navigation
@@ -107,3 +112,4 @@ class DupeDetectorViewController: UIViewController {
     
 
 }
+

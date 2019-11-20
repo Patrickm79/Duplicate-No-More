@@ -16,6 +16,8 @@ class PhotosCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    weak var delegate: PhotoSelectionDelegate?
+    
     @IBOutlet weak var imageOutlet: UIImageView!
     @IBOutlet weak var labelOutlet: UILabel!
     @IBOutlet weak var checkmarkLabel: UILabel!

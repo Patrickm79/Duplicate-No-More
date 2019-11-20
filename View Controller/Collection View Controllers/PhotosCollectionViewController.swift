@@ -9,13 +9,14 @@
 import UIKit
 
 protocol PhotoSelectionDelegate: class {
-    func selectCell()
+    func selectCell(_ cell: PhotosCollectionViewController)
 }
 
-class PhotosCollectionViewController: UICollectionViewController, PhotoSelectionDelegate {
+class PhotosCollectionViewController: UICollectionViewController {
     
     //MARK: PROPERTIES
     weak var delegate: PhotoSelectionDelegate?
+    
     var photoController = PhotoController()
     
     //MARK: OUTLETS
@@ -45,6 +46,16 @@ class PhotosCollectionViewController: UICollectionViewController, PhotoSelection
             deleteButton.isEnabled = false
         }
     }
+    
+    //MARK: METHODS
+    
+    func selectCell(_ cell: PhotosCollectionViewController) {
+        guard let cellData = cell.collectionView.indexPathsForSelectedItems else { return }
+        for indexPath in cellData {
+            guard (cell.collectionView.cellForItem(at: indexPath) as? PhotosCollectionViewCell) != nil else { return }
+        }
+    }
+    
     // MARK: - Navigation
     
     
@@ -103,17 +114,6 @@ class PhotosCollectionViewController: UICollectionViewController, PhotoSelection
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let selectedItems = collectionView.indexPathsForSelectedItems, selectedItems.count == 0 {
             deleteButton.isEnabled = false
-        }
-    }
-    
-    func selectCell() -> Photo {
-        guard let selectedCell = collectionView.indexPathsForSelectedItems else { return }
-            for indexPath in selectedCell {
-                guard let cell = collectionView.cellForItem(at: indexPath) as? PhotosCollectionViewCell else { return }
-            guard let imageData = cell.photo?.imageData else { return }
-            guard let photoText = cell.photo?.title else { return }
-                let photo: Photo = Photo(imageData: imageData, title: photoText)
-                return photo
         }
     }
     
