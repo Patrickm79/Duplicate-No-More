@@ -96,13 +96,9 @@ class DupeDetectorViewController: UIViewController, PhotoSelectionDelegate {
             
             let alertController = UIAlertController(title: "Duplicate Detected", message: "", preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Delete Incoming!", style: .destructive) { (_) in
-                ModalTransitionMediator.instance.sendPopoverDismissed(modelChanged: true)
                 self.navigationController?.popViewController(animated: true)
-                
             }
-            
             alertController.addAction(alertAction)
-            
             self.present(alertController, animated: true, completion: nil)
         }
         
@@ -112,7 +108,6 @@ class DupeDetectorViewController: UIViewController, PhotoSelectionDelegate {
                 self.navigationController?.popViewController(animated: true)
             }
             alertController.addAction(alertAction)
-
             self.present(alertController, animated: true, completion: nil)
         }
     }

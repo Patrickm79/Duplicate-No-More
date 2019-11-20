@@ -28,6 +28,10 @@ class AddPhotosViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
     //MARK: ACTIONS
     
     @IBAction func addPhotoTapped(_ sender: Any) {

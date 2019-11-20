@@ -51,7 +51,7 @@ class PhotoController {
             }
         }
 
-        private func loadFromPersistentStore() {
+        func loadFromPersistentStore() {
             let fm = FileManager.default
             guard let url = persistentFileURL,
                 fm.fileExists(atPath: url.path) else { return }

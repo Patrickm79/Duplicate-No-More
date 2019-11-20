@@ -18,12 +18,8 @@ enum ImageSelected {
 }
 
 
-class PhotosCollectionViewController: UICollectionViewController, ModalTransitionListener {
+class PhotosCollectionViewController: UICollectionViewController {
     
-    func popoverDismissed() {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-        collectionView.reloadData()
-    }
     
     
     //MARK: PROPERTIES
@@ -43,11 +39,13 @@ class PhotosCollectionViewController: UICollectionViewController, ModalTransitio
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ModalTransitionMediator.instance.setListener(listener: self)
+        photoController.loadFromPersistentStore()
+        collectionView.reloadData()
     }
     
     //MARK: ACTIONS
