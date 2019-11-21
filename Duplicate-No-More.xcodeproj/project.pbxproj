@@ -15,10 +15,10 @@
 		DB1E693123830A0D00AFA45B /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693023830A0D00AFA45B /* PhotoModel.swift */; };
 		DB1E693323830CCF00AFA45B /* PhotoModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693223830CCF00AFA45B /* PhotoModelController.swift */; };
 		DB1E69372383196200AFA45B /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E69362383196200AFA45B /* PhotosCollectionViewCell.swift */; };
-		DB1E69392383196D00AFA45B /* PhotosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E69382383196D00AFA45B /* PhotosTableViewController.swift */; };
 		DB1E693D23831A4F00AFA45B /* AddPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693C23831A4F00AFA45B /* AddPhotosViewController.swift */; };
 		DB1E693F23831B9200AFA45B /* DupeDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E693E23831B9200AFA45B /* DupeDetectorViewController.swift */; };
-		DB1E69412383270800AFA45B /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E69402383270800AFA45B /* PhotosTableViewCell.swift */; };
+		DB1E694B238353FA00AFA45B /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1E694A238353FA00AFA45B /* PhotosCollectionViewController.swift */; };
+		DBF7B7EB23845750005AD0CC /* PhotoComparisonModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF7B7EA23845750005AD0CC /* PhotoComparisonModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +32,10 @@
 		DB1E693023830A0D00AFA45B /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		DB1E693223830CCF00AFA45B /* PhotoModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModelController.swift; sourceTree = "<group>"; };
 		DB1E69362383196200AFA45B /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
-		DB1E69382383196D00AFA45B /* PhotosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewController.swift; sourceTree = "<group>"; };
 		DB1E693C23831A4F00AFA45B /* AddPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosViewController.swift; sourceTree = "<group>"; };
 		DB1E693E23831B9200AFA45B /* DupeDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupeDetectorViewController.swift; sourceTree = "<group>"; };
-		DB1E69402383270800AFA45B /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
+		DB1E694A238353FA00AFA45B /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		DBF7B7EA23845750005AD0CC /* PhotoComparisonModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoComparisonModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1E693223830CCF00AFA45B /* PhotoModelController.swift */,
+				DBF7B7EA23845750005AD0CC /* PhotoComparisonModelController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -109,25 +110,16 @@
 			isa = PBXGroup;
 			children = (
 				DB1E6943238327B000AFA45B /* Collection View Controllers */,
-				DB1E69422383279400AFA45B /* Table View Controllers */,
 				DB1E694423832A3E00AFA45B /* Segue View Controllers */,
 			);
 			path = "View Controller";
-			sourceTree = "<group>";
-		};
-		DB1E69422383279400AFA45B /* Table View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				DB1E69382383196D00AFA45B /* PhotosTableViewController.swift */,
-				DB1E69402383270800AFA45B /* PhotosTableViewCell.swift */,
-			);
-			path = "Table View Controllers";
 			sourceTree = "<group>";
 		};
 		DB1E6943238327B000AFA45B /* Collection View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DB1E69362383196200AFA45B /* PhotosCollectionViewCell.swift */,
+				DB1E694A238353FA00AFA45B /* PhotosCollectionViewController.swift */,
 			);
 			path = "Collection View Controllers";
 			sourceTree = "<group>";
@@ -212,7 +204,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1E69412383270800AFA45B /* PhotosTableViewCell.swift in Sources */,
 				DB1E693323830CCF00AFA45B /* PhotoModelController.swift in Sources */,
 				DB1E693123830A0D00AFA45B /* PhotoModel.swift in Sources */,
 				DB1E69192383098F00AFA45B /* AppDelegate.swift in Sources */,
@@ -220,7 +211,8 @@
 				DB1E691B2383098F00AFA45B /* SceneDelegate.swift in Sources */,
 				DB1E693D23831A4F00AFA45B /* AddPhotosViewController.swift in Sources */,
 				DB1E69372383196200AFA45B /* PhotosCollectionViewCell.swift in Sources */,
-				DB1E69392383196D00AFA45B /* PhotosTableViewController.swift in Sources */,
+				DBF7B7EB23845750005AD0CC /* PhotoComparisonModelController.swift in Sources */,
+				DB1E694B238353FA00AFA45B /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
